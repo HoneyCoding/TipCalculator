@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <EditText
+            android:id="@+id/cost_of_service_edit_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Cost of Service"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/how_was_the_service"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="How was the service?"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cost_of_service_edit_text" />
+
+        <RadioGroup
+            android:id="@+id/radio_group"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:checkedButton="@id/option_amazing"
+            app:layout_constraintEnd_toEndOf="@id/how_was_the_service"
+            app:layout_constraintStart_toStartOf="@id/how_was_the_service"
+            app:layout_constraintTop_toBottomOf="@id/how_was_the_service">
+
+            <RadioButton
+                android:id="@+id/option_amazing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Amazing 😍 (20%)" />
+
+            <RadioButton
+                android:id="@+id/option_good"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Good 😊 (18%)" />
+
+            <RadioButton
+                android:id="@+id/option_okay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Okay 🙂 (15%)" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/calculate_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Calculate"
+            app:layout_constraintEnd_toEndOf="@+id/radio_group"
+            app:layout_constraintStart_toStartOf="@id/radio_group"
+            app:layout_constraintTop_toBottomOf="@id/radio_group" />
+
+        <TextView
+            android:id="@+id/tip_amount_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/tip_amount"
+            app:layout_constraintEnd_toEndOf="@id/calculate_button"
+            app:layout_constraintStart_toStartOf="@id/calculate_button"
+            app:layout_constraintTop_toBottomOf="@id/calculate_button"
+            tools:text="Tip Amount: $35" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
